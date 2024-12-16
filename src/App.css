@@ -1,0 +1,138 @@
+.login-page {
+  background-color: black;
+}
+.login-bg-card {
+  background-image: url("https://i.postimg.cc/5ykdbvc8/albulena-panduri-WUm-Ajd46kwc-unsplash.jpg");
+  background-position: center;
+  background-size: cover;
+  border-radius: 16px;
+}
+
+.title {
+  font-family: "denton";
+}
+
+.getstarted-btn {
+  background-color: transparent;
+  border-left: 10px solid transparent;
+  color: white;
+  transition: all 0.3s ease;
+  opacity: 0.8;
+}
+
+.getstarted-btn:hover {
+  background-color: white;
+  border-left: 10px solid black;
+  color: black;
+}
+
+.btn-grad {
+  background-image: linear-gradient(
+    to right,
+    #dc2424 0%,
+    #4a569d 51%,
+    #dc2424 100%
+  );
+}
+.btn-grad {
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  display: block;
+}
+
+.btn-grad:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.debit-card-bg {
+  background-image: linear-gradient(
+    to right,
+    #dc2424 0%,
+    #4a569d 51%,
+    #dc2424 100%
+  );
+}
+
+.home-page {
+  background: linear-gradient(
+    90deg,
+    rgb(0, 0, 0),
+    rgb(19, 19, 19),
+    rgb(0, 0, 0)
+  );
+
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(26, 27, 27);
+  transition: 0.5s;
+  background-size: 200% auto;
+}
+.home-page:hover {
+  background-position: right center; /* change the direction of the change here */
+}
+
+.pay-btn-grad {
+  background-image: linear-gradient(
+    to right,
+    #000000 0%,
+    #0f9b0f 51%,
+    #000000 100%
+  );
+}
+.pay-btn-grad {
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+
+  display: block;
+}
+
+.pay-btn-grad:hover {
+  background-position: right center; /* change the direction of the change here */
+
+  text-decoration: none;
+}
+
+.home-page-adsec-bg {
+  background-image: url(https://web-images.credcdn.in/v2/_next/assets/images/landing/desktop/cta-fold-final.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left center;
+}
+
+.ad-desc {
+  letter-spacing: 0.69px;
+  text-align: center;
+  cursor: default;
+  color: rgba(255, 255, 255, 0.15);
+  background-clip: text;
+  background-image: radial-gradient(
+    circle closest-side at 50% 50%,
+    rgb(255, 255, 255) 50%,
+    rgb(255, 255, 255) 60%,
+    rgba(255, 255, 255, 0.4) 80%,
+    transparent 100%
+  );
+  backdrop-filter: blur(10px);
+  background-position: 50% center;
+  background-repeat: no-repeat;
+  background-size: 450px 450px;
+  transition-timing-function: cubic-bezier(0.33, 0.81, 0.66, 0.95);
+}
+
+.scrollbar-hidden {
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
