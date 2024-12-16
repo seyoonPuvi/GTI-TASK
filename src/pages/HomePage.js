@@ -146,16 +146,16 @@ const HomePage = () => {
   };
 
   const onRenderHomePageAd = () => (
-    <div className="w-[50%]  flex-grow">
+    <div className="w-[50%] flex-grow mb-10">
       <img
         src="https://web-images.credcdn.in/v2/_next/assets/images/landing/datasafe.png"
         alt="secure-icon"
-        className="h-20 w-20 object-contain object-center m-auto"
+        className="h-14 w-20 object-contain object-center m-auto"
       />
-      <h3 className="text-white text-3xl font-mono text-center mt-4">
+      <h3 className="text-white text-xl font-mono text-center mt-4">
         your data isn't our business. keeping it safe is.
       </h3>
-      <div className="ad-desc font-extrabold text-6xl mt-3">
+      <div className="ad-desc font-extrabold text-5xl mt-3">
         all your personal data and <br />
         transactions are encrypted and <br />
         secured. there's no room for mistakes <br />
@@ -189,12 +189,12 @@ const HomePage = () => {
   );
   const onRenderPay = () => (
     <div className="flex w-[50%] flex-grow justify-between  ">
-      <div className="w-[45%] h-[480px]  border-[1px] border-solid border-[#1A1B1B] rounded-xl px-6 py-4">
-        <h3 className="text-4xl font-mono tracking-wider text-green-900 text-center">
+      <div className="w-[50%] h-[480px]  border-[1px] border-solid border-[#1A1B1B] rounded-xl py-4">
+        <h3 className="text-2xl font-mono tracking-wider text-green-900 text-center">
           Make Payment
         </h3>
         <form
-          className="flex flex-col gap-y-4  h-full mt-8"
+          className="flex flex-col gap-y-4  h-full mt-8 px-4"
           onSubmit={(e) => e.preventDefault()}
         >
           <input
@@ -207,7 +207,7 @@ const HomePage = () => {
                 receiverMail: e.target.value,
               })
             }
-            className="w-[100%] h-12 rounded-lg bg-slate-200 px-4 text-black font-thin text-lg outline-none"
+            className="w-[100%] h-10 rounded-lg bg-slate-200 px-4 text-black font-thin text-lg outline-none"
           />
           <input
             type="text"
@@ -219,7 +219,7 @@ const HomePage = () => {
                 name: e.target.value,
               })
             }
-            className="w-[100%] h-12 rounded-lg bg-slate-200 px-4 text-black font-thin text-lg outline-none"
+            className="w-[100%] h-10 rounded-lg bg-slate-200 px-4 text-black font-thin text-lg outline-none"
           />
           <input
             type="text"
@@ -231,7 +231,7 @@ const HomePage = () => {
                 amount: parseFloat(e.target.value) || "",
               })
             }
-            className="w-[100%] h-12 rounded-lg bg-slate-200 px-4 text-black font-thin text-lg outline-none"
+            className="w-[100%] h-10 rounded-lg bg-slate-200 px-4 text-black font-thin text-lg outline-none"
           />
           <input
             type="text"
@@ -243,7 +243,7 @@ const HomePage = () => {
                 description: e.target.value,
               })
             }
-            className="w-[100%] h-12 rounded-lg bg-slate-200 px-4 text-black font-thin text-lg outline-none"
+            className="w-[100%] h-10 rounded-lg bg-slate-200 px-4 text-black font-thin text-lg outline-none"
           />
           <button
             onClick={(e) => onClickPayBtn(e)}
@@ -261,7 +261,7 @@ const HomePage = () => {
                 });
                 setShowPaymentStatus(false);
               }}
-              className="h-8 w-32 pay-btn-grad text-sm text-white font-thin rounded-md tracking-wide cursor-pointer"
+              className="h-8 w-20 pay-btn-grad text-[10px] text-white font-thin rounded-md tracking-wide cursor-pointer"
             >
               New Payment
             </button>
@@ -270,7 +270,7 @@ const HomePage = () => {
                 setActiveTab("AD");
                 setShowPaymentStatus(false);
               }}
-              className="h-8 w-32 home-page text-lg text-white font-thin rounded-md tracking-wide cursor-pointer"
+              className="h-8 w-20 home-page text-[sm] text-white font-thin rounded-md tracking-wide cursor-pointer"
             >
               Return
             </button>
@@ -286,41 +286,41 @@ const HomePage = () => {
     </div>
   );
   const onRenderPaymentStatus = () => (
-    <div className="w-[45%] h-[480px]  border-[1px] border-solid border-[#1A1B1B] rounded-xl px-6 py-6">
-      <h3 className="text-4xl font-mono tracking-wider text-yellow-900 text-center">
+    <div className="w-[50%] h-[480px]  border-[1px] border-solid border-[#1A1B1B] rounded-xl px-2 py-6">
+      <h3 className="text-2xl font-mono tracking-wider text-yellow-900 text-center">
         Payment Status
       </h3>
       {paymentStatus !== "processing" ? (
         <div className="flex flex-col gap-y-6 justify-center h-full">
-          <p className="text-gray-500 text-2xl font-mono">
+          <p className="text-gray-500 text-[16px] font-mono">
             TransactionState:
-            <span className="text-white font-thin text-lg">Completed✅</span>
+            <span className="text-white font-thin text-sm">Completed✅</span>
           </p>
-          <p className="text-gray-500 text-2xl font-mono">
+          <p className="text-gray-500 text-[16px] font-mono">
             TransactionID:
-            <span className="text-white font-thin text-lg">{Date.now()}</span>
+            <span className="text-white font-thin text-sm">{Date.now()}</span>
           </p>
-          <p className="text-gray-500 text-2xl font-mono">
+          <p className="text-gray-500 text-[16px] font-mono">
             TransactionDATE:
-            <span className="text-white text-lg font-thin">
+            <span className="text-white text-sm font-thin">
               {moment().format("DD/MM/YYYY")}
             </span>
           </p>
-          <p className="text-gray-500 text-2xl font-mono">
+          <p className="text-gray-500 text-[16px] font-mono">
             Sender:
-            <span className="text-white font-thin text-lg">
+            <span className="text-white font-thin text-sm">
               {userDetails.email}
             </span>
           </p>
-          <p className="text-gray-500 text-2xl font-mono">
+          <p className="text-gray-500 text-[16px] font-mono">
             Receiver:
-            <span className="text-white font-thin text-lg">
+            <span className="text-white font-thin text-sm">
               {paymentDetails.receiverMail}
             </span>
           </p>
-          <p className="text-gray-500 text-2xl font-mono">
+          <p className="text-gray-500 text-[16px] font-mono">
             Amount Sent:
-            <span className="text-white font-thin text-lg">
+            <span className="text-white font-thin text-sm">
               {paymentDetails.amount}rs
             </span>
           </p>
@@ -363,10 +363,10 @@ const HomePage = () => {
     }
   };
   return (
-    <div className="min-h-screen h-full w-full overflow-hidden flex flex-col text-white font-extrabold">
+    <div className="min-h-screen h-full w-full  flex flex-col text-white font-extrabold pb-10">
       {onRenderHeader()}
       {onRenderVedioBackground()}
-      <div className="bg-black opacity-95 w-[90%] h-[80vh] px-8 py-6 mt-10 rounded-xl m-auto relative">
+      <div className="bg-black opacity-95 w-[90%] px-8 py-10 mt-10 rounded-xl m-auto relative">
         <h1 className="text-center text-xl font-light mb-14 tracking-widest font-sans">
           Welcome To Your Dashboard ✨
         </h1>

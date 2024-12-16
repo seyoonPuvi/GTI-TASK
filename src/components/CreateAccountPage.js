@@ -10,9 +10,9 @@ const CreateAccountPage = ({
   errorMsg,
 }) => {
   return (
-    <div className="flex justify-end bg-black opacity-85 rounded-lg w-[65%] h-[80%] m-auto p-4">
-      <div className="text-white w-[50%] h-full flex justify-center items-center">
-        <div className="debit-card-bg h-[40%] w-[80%] rounded-xl px-4 py-1">
+    <div className="flex justify-end bg-black opacity-85 rounded-lg w-[85%]  m-auto p-4">
+      <div className="text-white w-[50%]  flex justify-center items-center">
+        <div className="debit-card-bg h-56 w-[80%] rounded-xl px-4 py-1">
           <img
             src="https://i.postimg.cc/NFyPXShy/visa.png"
             alt="mastercard-icon"

@@ -3,7 +3,7 @@ import { onRenderCardNo } from "../utils/validate";
 
 const AccountDetails = ({ setActiveTab, userDetails, balance }) => {
   return (
-    <div className="h-full w-[35%]  text-white  pb-5">
+    <div className="h-full w-[45%]  text-white  pb-5">
       <div className="home-page h-[33%] w-[95%] rounded-xl px-4 py-1 shadow-xl">
         <img
           src="https://i.postimg.cc/NFyPXShy/visa.png"

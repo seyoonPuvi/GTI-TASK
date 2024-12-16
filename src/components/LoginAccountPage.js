@@ -11,7 +11,7 @@ const LoginAccountPage = ({
   const [showPassword, toggleShowPassword] = useState(false);
   return (
     <div className="h-[70%] w-full flex justify-center items-center">
-      <div className="bg-black w-[30%] h-[90%] opacity-85 rounded-lg px-4 py-6 flex flex-col items-center justify-center">
+      <div className="bg-black w-[40%] h-[90%] opacity-85 rounded-lg px-4 py-6 flex flex-col items-center justify-center">
         <h3 className="text-white text-4xl font-mono">Login Your Account</h3>
         <p className="font-thin text-gray-100 px-4 py-2">
           Don't you have an Account?

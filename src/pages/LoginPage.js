@@ -136,8 +136,8 @@ const LoginPage = () => {
   };
 
   const onRendergetStartedPage = () => (
-    <div className=" w-full mt-32 text-center text-white">
-      <h1 className="text-9xl  title font-extrabold tracking-wider ">
+    <div className=" w-full h-full flex flex-col justify-center text-center text-white">
+      <h1 className="text-8xl  title font-extrabold tracking-wider ">
         crafted for the
         <br />
         creditworthy
@@ -148,7 +148,7 @@ const LoginPage = () => {
       </p>
 
       <button
-        className="py-2 px-6 getstarted-btn  mt-24 text-2xl font-bold rounded-md"
+        className="py-2 px-6 getstarted-btn  mt-10 text-2xl font-bold rounded-md self-center"
         onClick={() => setGetStartBtn(true)}
       >
         Get Started
@@ -177,7 +177,7 @@ const LoginPage = () => {
   );
 
   return (
-    <div className="h-screen w-screen">
+    <div className="min-h-screen w-screen pb-10">
       <div className="h-full w-full absolute">
         <video
           autoPlay
@@ -187,7 +187,7 @@ const LoginPage = () => {
           src="https://web-images.credcdn.in/v2/_next/assets/videos/landing/desktop/hero-desktop.mp4?tr=q-95"
         />
       </div>
-      <h1 className="text-6xl text-white font-bold tracking-wider z-50 relative p-4">
+      <h1 className="text-3xl text-white font-bold tracking-wider z-50 relative p-4">
         GTI
       </h1>
       {!isGetStartedBtnClicked
