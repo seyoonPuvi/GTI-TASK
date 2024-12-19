@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/GTI-TASK/static/css/main.418c4cae.css",
-    "main.js": "/GTI-TASK/static/js/main.6f3ab87a.js",
+    "main.css": "/GTI-TASK/static/css/main.1d2bfabd.css",
+    "main.js": "/GTI-TASK/static/js/main.2d69b0d2.js",
     "index.html": "/GTI-TASK/index.html",
-    "main.418c4cae.css.map": "/GTI-TASK/static/css/main.418c4cae.css.map",
-    "main.6f3ab87a.js.map": "/GTI-TASK/static/js/main.6f3ab87a.js.map"
+    "main.1d2bfabd.css.map": "/GTI-TASK/static/css/main.1d2bfabd.css.map",
+    "main.2d69b0d2.js.map": "/GTI-TASK/static/js/main.2d69b0d2.js.map"
   },
   "entrypoints": [
-    "static/css/main.418c4cae.css",
-    "static/js/main.6f3ab87a.js"
+    "static/css/main.1d2bfabd.css",
+    "static/js/main.2d69b0d2.js"
   ]
 }
