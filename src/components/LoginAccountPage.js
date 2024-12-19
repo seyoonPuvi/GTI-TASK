@@ -10,10 +10,12 @@ const LoginAccountPage = ({
 }) => {
   const [showPassword, toggleShowPassword] = useState(false);
   return (
-    <div className="h-[70%] w-full flex justify-center items-center">
-      <div className="bg-black w-[40%] h-[90%] opacity-85 rounded-lg px-4 py-6 flex flex-col items-center justify-center">
-        <h3 className="text-white text-4xl font-mono">Login Your Account</h3>
-        <p className="font-thin text-gray-100 px-4 py-2">
+    <div className="h-[70%] w-full flex flex-col md:flex-row justify-center items-center mt-32 md:mt-14">
+      <div className="bg-black md:w-[30%] h-[90%] opacity-85 rounded-lg px-4 py-6 flex flex-col items-center justify-center">
+        <h3 className="text-white text-2xl md:text-4xl font-mono">
+          Login Your Account
+        </h3>
+        <p className="font-thin text-md md:text-xl text-gray-100 px-4 py-2">
           Don't you have an Account?
           <span
             className="text-blue-500 cursor-pointer"
@@ -33,7 +35,7 @@ const LoginAccountPage = ({
             CreateAccount
           </span>
         </p>
-        <form className="mt-8 text-black flex flex-col gap-y-4 w-[90%]">
+        <form className="md:mt-8 text-black flex flex-col gap-y-4 w-[90%]">
           <input
             type="email"
             placeholder="Enter Email ID"

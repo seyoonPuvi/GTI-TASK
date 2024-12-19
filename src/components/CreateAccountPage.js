@@ -10,40 +10,40 @@ const CreateAccountPage = ({
   errorMsg,
 }) => {
   return (
-    <div className="flex justify-end bg-black opacity-85 rounded-lg w-[85%]  m-auto p-4">
-      <div className="text-white w-[50%]  flex justify-center items-center">
-        <div className="debit-card-bg h-56 w-[80%] rounded-xl px-4 py-1">
+    <div className="flex flex-col  md:flex-row md:justify-between bg-black opacity-85 rounded-lg sm:w-[90%] xl:w-[70%] m-auto px-6 py-8">
+      <div className="text-white w-full sm:w-[90%] md:w-[50%]  flex justify-center items-center m-auto">
+        <div className="debit-card-bg  h-44 w-full sm:h-56 sm:w-[400px] rounded-xl px-4 py-1">
           <img
             src="https://i.postimg.cc/NFyPXShy/visa.png"
             alt="mastercard-icon"
-            className="ml-auto h-10 w-16"
+            className="ml-auto h-8 sm:h-10 w-8 sm:w-16"
           />
           <img
             src="https://i.postimg.cc/y6MzPXfq/chip.png"
             alt="chip-icon"
             className="h-[30px] w-[40px] object-cover rounded-lg"
           />
-          <h3 className="text-white font-mono text-3xl mt-2 tracking-wide">
+          <h3 className="text-white font-mono text-[20px] sm:text-3xl sm:mt-2 tracking-wide">
             {userInputDetails.cardNo
               ? onRenderCardNo(userInputDetails.cardNo)
               : "XXXX XXXX XXXX XXXX"}
           </h3>
-          <div className="pt-1 text-center ml-10">
+          <div className=" text-center ml-10">
             <span className="text-[10px]">VALID THRU</span>
-            <h3>
+            <h3 className="text-[10px]">
               {userInputDetails.expiryMonth}/ {userInputDetails.expiryYear}
             </h3>
           </div>
-          <h3 className="text-white font-mono text-2xl mt-2 tracking-wider overflow-hidden whitespace-nowrap text-ellipsis max-w-full">
+          <h3 className="text-white font-mono sm:text-2xl  tracking-wider overflow-hidden whitespace-nowrap text-ellipsis max-w-full">
             {userInputDetails.name.split(" ").join("").toUpperCase()}
           </h3>
         </div>
       </div>
-      <div className="text-white w-[50%] px-4">
-        <h3 className="text-white text-5xl font-mono pt-6">
+      <div className="text-white md:w-[50%] w-full">
+        <h3 className="text-white text-3xl 2xl:text-5xl font-mono pt-6 text-center">
           Create an account
         </h3>
-        <p className="font-thin text-gray-100 px-4 py-2">
+        <p className="font-thin text-gray-100 px-4 py-2 text-center">
           Already have an Account?
           <span
             className="text-blue-500 cursor-pointer"
@@ -63,7 +63,7 @@ const CreateAccountPage = ({
             Login
           </span>
         </p>
-        <form className="mt-8 text-black flex flex-col gap-y-4 w-[90%]">
+        <form className="mt-8 text-black flex flex-col gap-y-4 w-full sm:w-[90%] m-auto">
           <input
             type="email"
             placeholder="Enter Email ID"
@@ -90,7 +90,7 @@ const CreateAccountPage = ({
           />
 
           <div className="py-4 flex flex-col gap-y-4">
-            <p className="text-white text-2xl font-mono">
+            <p className="text-white text-xl sm:text-2xl font-mono ">
               Enter Your Card Details
             </p>
             <input

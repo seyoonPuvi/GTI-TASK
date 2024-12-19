@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import moment from "moment";
 import { ClipLoader } from "react-spinners";
-
 import AccountDetails from "../components/AccountDetails";
 import TransactionItem from "../components/TransactionItem";
 import { useDispatch, useSelector } from "react-redux";
@@ -12,6 +11,8 @@ import {
 } from "../utils/store/userSlice";
 import { useNavigate } from "react-router-dom";
 import { checkValidPaymentData } from "../utils/validate";
+import HomePageAD from "../components/HomePageAD";
+import Payment from "../components/Payment";
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -37,7 +38,7 @@ const HomePage = () => {
         dispatch(addUserDetails(loggedUser));
       }
     }
-  }, []);
+  }, [dispatch, userDetails]);
 
   useEffect(() => {
     setPaymentDetails({
@@ -145,31 +146,14 @@ const HomePage = () => {
     navigate("/");
   };
 
-  const onRenderHomePageAd = () => (
-    <div className="w-[50%] flex-grow mb-10">
-      <img
-        src="https://web-images.credcdn.in/v2/_next/assets/images/landing/datasafe.png"
-        alt="secure-icon"
-        className="h-14 w-20 object-contain object-center m-auto"
-      />
-      <h3 className="text-white text-xl font-mono text-center mt-4">
-        your data isn't our business. keeping it safe is.
-      </h3>
-      <div className="ad-desc font-extrabold text-5xl mt-3">
-        all your personal data and <br />
-        transactions are encrypted and <br />
-        secured. there's no room for mistakes <br />
-        because we didn't leave any.
-      </div>
-    </div>
-  );
-
   const onRenderHeader = () => (
     <div className=" py-2 px-6 flex justify-between items-center">
-      <h1 className="text-6xl font-bold tracking-wider z-50 relative">GTI</h1>
+      <h1 className="text-2xl md:text-6xl font-bold tracking-wider z-50 relative">
+        GTI
+      </h1>
       <button
         onClick={() => onClickLogout()}
-        className="py-2 px-6 text-3xl  font-bold rounded-md cursor-pointer z-50"
+        className="py-2 px-6 text-xl md:text-3xl  font-bold rounded-md cursor-pointer z-50"
       >
         Logout
       </button>
@@ -187,109 +171,22 @@ const HomePage = () => {
       />
     </div>
   );
-  const onRenderPay = () => (
-    <div className="flex w-[50%] flex-grow justify-between  ">
-      <div className="w-[50%] h-[480px]  border-[1px] border-solid border-[#1A1B1B] rounded-xl py-4">
-        <h3 className="text-2xl font-mono tracking-wider text-green-900 text-center">
-          Make Payment
-        </h3>
-        <form
-          className="flex flex-col gap-y-4  h-full mt-8 px-4"
-          onSubmit={(e) => e.preventDefault()}
-        >
-          <input
-            type="text"
-            placeholder="Enter the Receiver Email ID"
-            value={paymentDetails.receiverMail}
-            onChange={(e) =>
-              setPaymentDetails({
-                ...paymentDetails,
-                receiverMail: e.target.value,
-              })
-            }
-            className="w-[100%] h-10 rounded-lg bg-slate-200 px-4 text-black font-thin text-lg outline-none"
-          />
-          <input
-            type="text"
-            placeholder="Name of the Receiver"
-            value={paymentDetails.name}
-            onChange={(e) =>
-              setPaymentDetails({
-                ...paymentDetails,
-                name: e.target.value,
-              })
-            }
-            className="w-[100%] h-10 rounded-lg bg-slate-200 px-4 text-black font-thin text-lg outline-none"
-          />
-          <input
-            type="text"
-            placeholder="Enter Amount to Send"
-            value={paymentDetails.amount}
-            onChange={(e) =>
-              setPaymentDetails({
-                ...paymentDetails,
-                amount: parseFloat(e.target.value) || "",
-              })
-            }
-            className="w-[100%] h-10 rounded-lg bg-slate-200 px-4 text-black font-thin text-lg outline-none"
-          />
-          <input
-            type="text"
-            placeholder="Description"
-            value={paymentDetails.description}
-            onChange={(e) =>
-              setPaymentDetails({
-                ...paymentDetails,
-                description: e.target.value,
-              })
-            }
-            className="w-[100%] h-10 rounded-lg bg-slate-200 px-4 text-black font-thin text-lg outline-none"
-          />
-          <button
-            onClick={(e) => onClickPayBtn(e)}
-            className="w-full h-12 bg-green-600 pay-btn-grad text-2xl text-white font-thin rounded-md tracking-wide cursor-pointer"
-          >
-            Pay
-          </button>
 
-          <div className="flex justify-between items-center mt-5">
-            <button
-              onClick={() => {
-                setPaymentDetails({
-                  receiverMail: "",
-                  amount: "",
-                });
-                setShowPaymentStatus(false);
-              }}
-              className="h-8 w-20 pay-btn-grad text-[10px] text-white font-thin rounded-md tracking-wide cursor-pointer"
-            >
-              New Payment
-            </button>
-            <button
-              onClick={() => {
-                setActiveTab("AD");
-                setShowPaymentStatus(false);
-              }}
-              className="h-8 w-20 home-page text-[sm] text-white font-thin rounded-md tracking-wide cursor-pointer"
-            >
-              Return
-            </button>
-          </div>
-        </form>
-      </div>
-      {showPaymentStatus && onRenderPaymentStatus()}
-    </div>
-  );
   const onRenderSpinner = () => (
     <div className="flex justify-center items-center h-full">
       <ClipLoader color="#36D7B7" loading={true} size={50} />
     </div>
   );
   const onRenderPaymentStatus = () => (
-    <div className="w-[50%] h-[480px]  border-[1px] border-solid border-[#1A1B1B] rounded-xl px-2 py-6">
-      <h3 className="text-2xl font-mono tracking-wider text-yellow-900 text-center">
-        Payment Status
-      </h3>
+    <div className="w-full md:w-[50%] h-[480px]  border-[1px] border-solid border-[#1A1B1B] rounded-xl px-2 py-6">
+      <div className="flex justify-between items-center">
+        <h3 className="text-2xl font-mono tracking-wider text-yellow-900 text-center">
+          Payment Status
+        </h3>
+        <button className="" onClick={() => setShowPaymentStatus(false)}>
+          ❌
+        </button>
+      </div>
       {paymentStatus !== "processing" ? (
         <div className="flex flex-col gap-y-6 justify-center h-full">
           <p className="text-gray-500 text-[16px] font-mono">
@@ -357,25 +254,36 @@ const HomePage = () => {
       case "TRANS":
         return onRenderTransaction();
       case "PAY":
-        return onRenderPay();
+        return (
+          <Payment
+            showPaymentStatus={showPaymentStatus}
+            paymentDetails={paymentDetails}
+            setPaymentDetails={setPaymentDetails}
+            onClickPayBtn={onClickPayBtn}
+            setShowPaymentStatus={setShowPaymentStatus}
+            setActiveTab={setActiveTab}
+            onRenderPaymentStatus={onRenderPaymentStatus}
+          />
+        );
       default:
-        return onRenderHomePageAd();
+        return <HomePageAD />;
     }
   };
   return (
     <div className="min-h-screen h-full w-full  flex flex-col text-white font-extrabold pb-10">
       {onRenderHeader()}
       {onRenderVedioBackground()}
-      <div className="bg-black opacity-95 w-[90%] px-8 py-10 mt-10 rounded-xl m-auto relative">
-        <h1 className="text-center text-xl font-light mb-14 tracking-widest font-sans">
+      <div className="bg-black opacity-95 w-full sm:w-[90%] px-2 sm:px-8 py-5 sm:py-10 mt-5 sm:mt-10 rounded-xl m-auto relative">
+        <h1 className="text-center text-xl font-light mb-3 sm:mb-14 tracking-widest font-sans">
           Welcome To Your Dashboard ✨
         </h1>
-        <div className="flex w-full ">
+        <div className="flex w-full justify-between">
           {userDetails && (
             <AccountDetails
               setActiveTab={setActiveTab}
               balance={getBalance()}
               userDetails={userDetails}
+              activeTab={activeTab}
             />
           )}
           {onRenderActiveTab()}

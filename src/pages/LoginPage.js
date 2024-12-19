@@ -136,19 +136,19 @@ const LoginPage = () => {
   };
 
   const onRendergetStartedPage = () => (
-    <div className=" w-full h-full flex flex-col justify-center text-center text-white">
-      <h1 className="text-8xl  title font-extrabold tracking-wider ">
+    <div className="h-screen flex flex-col justify-center items-center overflow-hidden px-4">
+      <h1 className=" text-5xl sm:text-8xl xl:text-9xl  title font-extrabold tracking-wider text-center text-white">
         crafted for the
         <br />
         creditworthy
       </h1>
-      <p className="text-2xl mt-5">
+      <p className="text-[12px] text-center text-white sm:text-2xl mt-2">
         GTI is a members-only club that enables the <br /> trustworthy to make
         financial progress
       </p>
 
       <button
-        className="py-2 px-6 getstarted-btn  mt-10 text-2xl font-bold rounded-md self-center"
+        className="py-2 px-6 getstarted-btn mt-7  text-2xl font-bold rounded-md self-center"
         onClick={() => setGetStartBtn(true)}
       >
         Get Started
@@ -177,19 +177,19 @@ const LoginPage = () => {
   );
 
   return (
-    <div className="min-h-screen w-screen pb-10">
-      <div className="h-full w-full absolute">
-        <video
-          autoPlay
-          loop
-          muted
-          className="fixed top-0 left-0 w-full h-full -z-10 object-cover"
-          src="https://web-images.credcdn.in/v2/_next/assets/videos/landing/desktop/hero-desktop.mp4?tr=q-95"
-        />
-      </div>
-      <h1 className="text-3xl text-white font-bold tracking-wider z-50 relative p-4">
+    <div className="min-h-screen w-screen">
+      <h1 className=" text-2xl sm:text-4xl xl:text-6xl text-white font-bold tracking-wider z-50  p-4">
         GTI
       </h1>
+
+      <video
+        autoPlay
+        loop
+        muted
+        className="fixed top-0 left-0 -z-10 h-full w-full  object-cover"
+        src="https://web-images.credcdn.in/v2/_next/assets/videos/landing/desktop/hero-desktop.mp4?tr=q-95"
+      />
+
       {!isGetStartedBtnClicked
         ? onRendergetStartedPage()
         : showLoginPage
